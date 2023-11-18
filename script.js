@@ -32,7 +32,7 @@ function formatTime(seconds) {
     const h = Math.floor(seconds / 3600);
     const m = Math.floor((seconds % 3600) / 60);
     const s = seconds % 60;
-    return `${h.toString().padStart(2, '0')} hr : ${m.toString().padStart(2, '0')} min : ${s.toString().padStart(2, '0')} sec`;
+    return `${h.toString().padStart(2, '0')} : ${m.toString().padStart(2, '0')} : ${s.toString().padStart(2, '0')} `;
 }
 
 // Function to create a new timer with the specified total seconds
@@ -131,6 +131,7 @@ function displayNoTimersText() {
     noTimersText.classList.add('no-timers-text');
     noTimersText.textContent = 'You have no timers currently!';
     noTimersText.style.fontSize = "14px";
+    noTimersText.style.color = "#fff";
     allTimer.appendChild(noTimersText);
 }
 
