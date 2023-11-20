@@ -3,7 +3,7 @@ const activeTimers = document.getElementById('activeTimers');
 
 const startTimerButton = document.getElementById('startTimer');
 
-// displayNoTimersText();
+displayNoTimersText();
 let isTimerActive = false;
 startTimerButton.addEventListener("click",()=>{
   
@@ -13,6 +13,7 @@ startTimerButton.addEventListener("click",()=>{
 
     //total time in second
     const totalSeconds = hours*3600 + minutes*60 + seconds;
+
     if(totalSeconds > 0)
     {
         createTimer(totalSeconds);
@@ -77,8 +78,7 @@ function createTimer(totalSeconds)
             stopButton.style.display = 'none'; // Hide the Stop Timer button
             deleteButton.style.display = 'inline'; // Show the delete button
             timeLeftElement.style.display = 'none';
-            timerContainer.style.background = "#f0f757"
-            timerContainer.style.color = "#1d1d23"
+            timerContainer.style.cssText = "width:40% ; color:#1d1d23; background-color:#f0f757; "
 
             // Play an audio alert when Time is up!
             playAudioAlert();
@@ -95,6 +95,7 @@ function createTimer(totalSeconds)
         timerContainer.remove();
         isTimerActive = false; // Reset the active timer flag
         // Check if there are no timers, then display "You have no timers currently!" text
+
         if (allTimer.children.length === 0) {
             displayNoTimersText();
         }
@@ -138,8 +139,10 @@ function displayNoTimersText() {
 function removeNoTimersText() {
     // Find and remove the "You have no timers currently!" text
     const noTimersText = allTimer.querySelector('.no-timers-text');
+
     if (noTimersText) {
-        noTimersText.remove();
+     noTimersText.remove();
+        
     }
 }
 
