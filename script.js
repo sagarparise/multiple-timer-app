@@ -1,4 +1,4 @@
-let allTimer = document.querySelector(".list-of-timer");
+const allTimer = document.querySelector(".list-of-timer");
 const activeTimers = document.getElementById('activeTimers');
 
 const startTimerButton = document.getElementById('startTimer');
